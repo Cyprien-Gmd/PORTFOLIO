@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://kit.fontawesome.com/7e36d96364.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>titre</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <!-- LOGO -->
+            <h1>
+                <a href="./index.html">germond cyprien</a>
+            </h1>
+
+            <!-- LINK RS -->
+            <ul>
+                <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                <li><a href=""><i class="fab fa-github-square"></i></a></li>
+            </ul>
+
+            <!-- MENU BURGER TO CROSS -->
+            <div class="burgerbars" onclick="BurgerX(this)" onclick="openNav()">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+                <span class="bar3"></span>
+            </div>
+
+            <!-- NAVBAR -->
+            <div id="myNav" class="overlay">
+                <div class="overlay-content">
+                  <a href="#">HOME</a>
+                  <a href="#">SKILLS</a>
+                  <a href="#">PORTFOLIO</a>
+                  <a href="#">CONTACT</a>
+                </div>
+              </div>              
+        </nav>
+    </header>
+
+    <main>
+        <!-- DOTS PAGES SELCETORS -->
+        <div class="dot_selector">
+            <a class="dot" href="#home"></a>
+            <a class="dot" href="#skills"></a>
+            <a class="dot" href="#portfolio"></a>
+            <a class="dot" href="#contact"></a>
+        </div>
+
+<!-- CONTENT -->
+
+        <!-- SECTION HOME -->
+        <section id="home" class="snap">
+
+            <div class="container">
+                <div>                    
+                </div>
+
+                <!-- MAIN CONTENT -->
+                <div class="content">
+                    <!-- MOI -->
+                    <div id="home_me">
+                        <h2>
+                            germond <br> cyprien
+                        </h2>
+        
+                        <p>
+                            développeur web front-end junior
+                        </p>
+                    </div>
+                    <!-- ILLUSTRATIONS -->
+                    <div id="home_visual">
+                        
+                    </div>
+                </div>
+
+                <!-- BTN SCROLL NEXT PAGE -->
+                <div class="btn_next_page">
+                    <a href="#skills"><span></span>Scroll</a>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- SECTION SKILLS -->
+        <section id="skills" class="snap">
+
+            <div class="container">
+                <!-- TITRE SECTION -->
+                <div class="titre_sct">
+                    <h3 class="sct_h3">
+                        skills
+                    </h3>           
+                </div>
+
+
+
+
+                <!-- BTN SCROLL NEXT PAGE -->
+                <div class="btn_next_page">
+                    <a href="#portfolio"><span></span>Scroll</a>
+                </div>
+            </div>
+            
+
+
+        </section>
+
+        <!-- SECTION PORTFOLIO -->
+        <section id="portfolio" class="snap">
+
+            <div class="container">
+                <!-- TITRE SECTION -->
+                <div class="titre_sct">
+                    <h3 class="sct_h3">
+                        portfolio
+                    </h3>                
+                </div>
+
+                <!-- PORTFOLIO EXEMPLES -->
+                <div id="exemples">
+
+                    <!-- EXEMPLE 1 -->
+                    <div class="exemple">
+                        <div>
+                            <img class="myimg" id="myImg" onclick="onClick(this)" src="./img/SIMPLE TEMPLATE.jpg"
+                                alt="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, placeat!">
+                        </div>
+                    </div>
+
+                    <!-- EXEMPLE 2 -->
+                    <div class="exemple">
+                        <div>
+                            <img class="myimg" id="myImg2" onclick="onClick(this)" src="./img/PHOTOTIME.jpg"
+                            alt="...">
+                        </div>
+                    </div>
+
+                    <!-- EXEMPLE 3 -->
+                    <div class="exemple">
+                        <div>
+                            <img class="myimg" id="myImg2" onclick="onClick(this)" src="./img/NEWSLETTER.jpg"
+                            alt="...">
+                        </div>
+                    </div>
+
+                    <!-- EXEMPLE 4 -->
+                    <div class="exemple">
+                        <div>
+                            <img class="myimg" id="myImg" onclick="onClick(this)" src="./img/WEBPAINT.png"
+                                alt="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, placeat!">
+                        </div>
+                    </div>
+
+                    <!-- EXEMPLE 5 -->
+                    <div class="exemple">
+                        <div>
+                            <img class="myimg" id="myImg2" onclick="onClick(this)" src="./img/SNOWBOARD.png"
+                            alt="...">
+                        </div>
+                    </div>
+
+                    <!-- EXEMPLE 6 -->
+                    <div class="exemple">
+                        <div>
+                            <img class="myimg" id="myImg2" onclick="onClick(this)" src="./img/ACTIVITÉS BOWLING DU PARC.png"
+                            alt="...">>
+                        </div>
+                    </div>
+
+                    
+
+                    <!-- LE MODAL -->
+                    <div id="myModal" class="modal">
+                        <!-- BOUTON DE FERMETURE -->
+                        <span class="close">&times;</span>
+                        <!-- CONTENT (L'IMAGE) -->
+                        <img class="modal-content" id="img01">
+                        <!-- CAPTION (IMAGE) -->
+                        <div id="caption"></div>
+                    </div>
+                </div>
+
+                <!-- BTN SCROLL NEXT PAGE -->
+                <div class="btn_next_page">
+                    <a href="#contact"><span></span>Scroll</a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SECTION CONTACT -->
+        <section id="contact" class="snap">
+
+            <div class="container">
+
+                <!-- TITRE SECTION -->
+                <div class="titre_sct">
+                    <h3 class="sct_h3">
+                        contact
+                    </h3>
+                </div>
+    
+                <!-- BTNS CONTACT -->
+                <div id="form_content">
+                    <div>
+                        <a href="tel:+33642494412" target="_blank">
+                            06 42 49 44 12
+                        </a>
+                    </div>
+    
+                    <div>
+                        <a href="mailto:cypriengermond@orange.fr" target="_blank">
+                            cypriengermond@orange.fr
+                        </a>
+                    </div>
+    
+                    <div id="rs">
+                        <a href="https://www.linkedin.com/in/cyprien-germond-b993271b7/" target="_blank">
+                            LinkedIn
+                        </a>
+    
+                        <a href="https://github.com/Cyprien-Gmd" target="_blank">
+                            GitHub
+                        </a>
+                    </div>
+    
+                </div>
+            </div>
+        </section>
+
+<!-- FIN DU CONTENT -->
+
+        
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </footer>
+    
+
+    <!-- SCRIPTS JS -->
+    <script src="./js/script.js"></script>
+    <script src="./js/burgertocross.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/scroll.js"></script>
+    <script src="./js/modal.js"></script>
+</body>
+
+</html>

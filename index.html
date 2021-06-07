@@ -63,7 +63,7 @@
 <!-- CONTENT -->
 
         <!-- SECTION HOME -->
-        <section id="home" class="snap">
+        <section id="home" class="background">
 
             <div class="container">
                 <div>                    
@@ -81,9 +81,25 @@
                             développeur web front-end junior
                         </p>
                     </div>
+                    
                     <!-- ILLUSTRATIONS -->
                     <div id="home_visual">
-                        
+                        <!-- GAME -->
+                        <div class="illu">
+                            <img src="./img/bimoji_game.png" alt="">
+                        </div>
+                        <!-- CAT -->
+                        <div class="illu">
+                            <img src="./img/bimoji_cat.png" alt="">
+                        </div>
+                        <!-- MUSIC -->
+                        <div class="illu">
+                            <img src="./img/bimoji_skate.png" alt="">
+                        </div>
+                        <!-- MUSIC -->
+                        <div class="illu">
+                            <img src="./img/bimoji_surf.png" alt="">
+                        </div>
                     </div>
                 </div>
 
@@ -97,7 +113,7 @@
         </section>
 
         <!-- SECTION SKILLS -->
-        <section id="skills" class="snap">
+        <section id="skills" class="background">
 
             <div class="container">
                 <!-- TITRE SECTION -->
@@ -107,46 +123,68 @@
                     </h3>           
                 </div>
 
-                <!-- SLIDER SKILLS -->
-                <div id="slider_skills">
+                <div class="slider">
+                    <!-- SLIDESHOW CONTAINER -->
+                    <div class="slideshow-container">
+                        <!-- BTN PREV -->
+                        <a class="prev" onclick="plusSlides(-1)"><i class="fas fa-chevron-left"></i></a>
 
-                    <!-- HTML 5 -->
-                    <div class="frame_skill">
-                        <span><i class="fab fa-html5"></i></span>
+                        <!-- SLIDER SKILLS -->
+                        <div id="slider_skills">
+                            
+                            <!-- HTML 5 -->
+                            <div class="frame_skill mySlides fade">
+                                <span><i class="fab fa-html5"></i></span>
+                            </div>
+
+                            <!-- CSS 3 -->
+                            <div class="frame_skill mySlides fade">
+                                <span><i class="fab fa-css3-alt"></i></span>
+                            </div>
+
+                            <!-- JAVASCRIPT -->
+                            <div class="frame_skill mySlides fade">
+                                <span><i class="fab fa-node-js"></i></span>
+                            </div>                            
+
+                            <!-- BOOTSTRAP -->
+                            <div class="frame_skill mySlides fade">
+                                <span><i class="fab fa-bootstrap"></i></span>
+                            </div>
+
+                            <!-- WORDPRESS -->
+                            <div class="frame_skill mySlides fade">
+                                <span><i class="fab fa-wordpress"></i></span>
+                            </div>
+
+                            <!-- SASS -->
+                            <div class="frame_skill mySlides fade">
+                                <span><i class="fab fa-sass"></i></span>
+                            </div>
+
+                            <!-- PHP -->
+                            <div class="frame_skill mySlides fade">
+                                <span><i class="fab fa-php"></i></span>
+                            </div>
+                        </div>
+                        
+                        <!-- BTN NEXT -->
+                        <a class="next" onclick="plusSlides(1)"><i class="fas fa-chevron-right"></i></a>
                     </div>
 
-                    <!-- CSS 3 -->
-                    <div class="frame_skill">
-                        <span><i class="fab fa-css3-alt"></i></span>
-                    </div>
+                    <br>
 
-                    <!-- JAVASCRIPT -->
-                    <div class="frame_skill">
-                        <span><i class="fab fa-node-js"></i></span>
-                    </div>
-
-                    <!-- BOOTSTRAP -->
-                    <div class="frame_skill">
-                        <span><i class="fab fa-bootstrap"></i></span>
-                    </div>
-
-                    <!-- WORDPRESS -->
-                    <div class="frame_skill">
-                        <span><i class="fab fa-wordpress"></i></span>
-                    </div>
-
-                    <!-- SASS -->
-                    <div class="frame_skill">
-                        <span><i class="fab fa-sass"></i></span>
-                    </div>
-
-                    <!-- PHP -->
-                    <div class="frame_skill">
-                        <span><i class="fab fa-php"></i></span>
-                    </div>
+                    <!-- DOTS -->
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span> 
+                        <span class="dot" onclick="currentSlide(2)"></span> 
+                        <span class="dot" onclick="currentSlide(3)"></span> 
+                        <span class="dot" onclick="currentSlide(4)"></span> 
+                        <span class="dot" onclick="currentSlide(5)"></span> 
+                        <span class="dot" onclick="currentSlide(6)"></span> 
+                        <span class="dot" onclick="currentSlide(7)"></span> 
+                      </div>
                 </div>
-
-
 
                 <!-- BTN SCROLL NEXT PAGE -->
                 <div class="btn_next_page">
@@ -159,7 +197,7 @@
         </section>
 
         <!-- SECTION PORTFOLIO -->
-        <section id="portfolio" class="snap">
+        <section id="portfolio" class="background">
 
             <div class="container">
                 <!-- TITRE SECTION -->
@@ -242,7 +280,7 @@
         </section>
 
         <!-- SECTION CONTACT -->
-        <section id="contact" class="snap">
+        <section id="contact" class="background">
 
             <div class="container">
 
@@ -299,6 +337,7 @@
     <script src="./js/navbar.js"></script>
     <script src="./js/scroll.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/slider.js"></script>
 </body>
 
 </html>

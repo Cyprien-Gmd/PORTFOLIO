@@ -185,6 +185,11 @@ body header nav .overlay .overlay-content a:focus {
   }
 }
 
+body main {
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
 body main .dot_selector {
   height: 120px;
   display: -webkit-box;
@@ -312,6 +317,7 @@ body main .btn_next_page a:hover {
 }
 
 body main #home {
+  scroll-snap-align: start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -389,7 +395,27 @@ body main #home .container .content #home_me p {
   }
 }
 
+body main #home .container .content #home_visual {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 40%;
+}
+
+body main #home .container .content #home_visual .illu {
+  width: 50%;
+}
+
+body main #home .container .content #home_visual .illu img {
+  width: 90%;
+}
+
 body main #skills {
+  scroll-snap-align: start;
   height: 100vh;
   width: 80%;
   margin: 0 auto;
@@ -416,6 +442,7 @@ body main #skills .container {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
+  width: 100%;
 }
 
 body main #skills .container .titre_sct {
@@ -445,7 +472,23 @@ body main #skills .container .titre_sct .sct_h3 {
   }
 }
 
-body main #skills .container #slider_skills {
+body main #skills .container .slider {
+  width: 90%;
+}
+
+body main #skills .container .slider .slideshow-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* Fading animation */
+}
+
+body main #skills .container .slider .slideshow-container #slider_skills {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -453,23 +496,22 @@ body main #skills .container #slider_skills {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  width: 70%;
-  overflow-x: scroll;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  overflow: hidden;
 }
 
 @media (max-width: 375px) {
-  body main #skills .container #slider_skills {
+  body main #skills .container .slider .slideshow-container #slider_skills {
     width: 20%;
   }
 }
 
-body main #skills .container #slider_skills .frame_skill {
-  width: 33.333333%;
-  margin: 0 6%;
-  padding: 30px 0;
+body main #skills .container .slider .slideshow-container #slider_skills .frame_skill {
+  width: auto;
+  padding: 5%;
   -webkit-transition: 1.5s;
   transition: 1.5s;
   display: -webkit-box;
@@ -484,13 +526,13 @@ body main #skills .container #slider_skills .frame_skill {
 }
 
 @media (max-width: 375px) {
-  body main #skills .container #slider_skills .frame_skill {
+  body main #skills .container .slider .slideshow-container #slider_skills .frame_skill {
     width: 80%;
     display: none;
   }
 }
 
-body main #skills .container #slider_skills .frame_skill span {
+body main #skills .container .slider .slideshow-container #slider_skills .frame_skill span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -508,7 +550,7 @@ body main #skills .container #slider_skills .frame_skill span {
           box-shadow: 0 0 15px #000000;
 }
 
-body main #skills .container #slider_skills .frame_skill span i {
+body main #skills .container .slider .slideshow-container #slider_skills .frame_skill span i {
   -webkit-transform: rotateY(10deg);
           transform: rotateY(10deg);
   font-size: 9.75rem;
@@ -518,8 +560,8 @@ body main #skills .container #slider_skills .frame_skill span i {
   transition: 0.5s;
 }
 
-body main #skills .container #slider_skills .frame_skill:hover,
-body main #skills .container #slider_skills .frame_skill:out-of-range {
+body main #skills .container .slider .slideshow-container #slider_skills .frame_skill:hover,
+body main #skills .container .slider .slideshow-container #slider_skills .frame_skill:out-of-range {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   -webkit-transition: 0.5s ease-out;
@@ -527,13 +569,13 @@ body main #skills .container #slider_skills .frame_skill:out-of-range {
   cursor: pointer;
 }
 
-body main #skills .container #slider_skills .frame_skill:hover span,
-body main #skills .container #slider_skills .frame_skill:out-of-range span {
+body main #skills .container .slider .slideshow-container #slider_skills .frame_skill:hover span,
+body main #skills .container .slider .slideshow-container #slider_skills .frame_skill:out-of-range span {
   background-color: rgba(63, 61, 86, 0.2);
 }
 
-body main #skills .container #slider_skills .frame_skill:hover span i,
-body main #skills .container #slider_skills .frame_skill:out-of-range span i {
+body main #skills .container .slider .slideshow-container #slider_skills .frame_skill:hover span i,
+body main #skills .container .slider .slideshow-container #slider_skills .frame_skill:out-of-range span i {
   -webkit-transform: rotateY(360deg) rotateX(20deg);
           transform: rotateY(360deg) rotateX(20deg);
   color: rgba(255, 255, 255, 0.9);
@@ -542,12 +584,72 @@ body main #skills .container #slider_skills .frame_skill:out-of-range span i {
   transition: 0.75s ease-in-out;
 }
 
-body main #skills .container #slider_skills::-webkit-scrollbar {
-  width: 100%;
-  height: 4px;
+body main #skills .container .slider .slideshow-container .fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    -webkit-transform: translateX(100px) rotateY(270deg) scale(0.8);
+            transform: translateX(100px) rotateY(270deg) scale(0.8);
+    opacity: 0.2;
+  }
+  to {
+    -webkit-transform: translateX(0px) rotate(0);
+            transform: translateX(0px) rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    -webkit-transform: translateX(100px) rotateY(270deg) scale(0.8);
+            transform: translateX(100px) rotateY(270deg) scale(0.8);
+    opacity: 0.2;
+  }
+  to {
+    -webkit-transform: translateX(0px) rotate(0);
+            transform: translateX(0px) rotate(0);
+    opacity: 1;
+  }
+}
+
+body main #skills .container .slider a {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body main #skills .container .slider a i {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 5rem;
+  text-shadow: 0 0 20px #FFFFFF;
+}
+
+body main #skills .container .dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease;
+}
+
+body main #skills .container .active,
+body main #skills .container .dot:hover {
+  background-color: #D89561;
 }
 
 body main #portfolio {
+  scroll-snap-align: start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -618,6 +720,10 @@ body main #portfolio .container #exemples {
           align-items: flex-start;
   width: 100%;
   height: 60%;
+}
+
+body main #portfolio .container #exemples ::-webkit-scrollbar {
+  width: 0px;
 }
 
 body main #portfolio .container #exemples .exemple {
@@ -732,6 +838,7 @@ body main #portfolio .container .modal .close:focus {
 }
 
 body main #contact {
+  scroll-snap-align: start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -834,6 +941,8 @@ body main #contact .container #form_content div {
 
 body main #contact .container #form_content div a {
   background-color: rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0 0 30px #000000;
+          box-shadow: 0 0 30px #000000;
   padding: 25px 0;
   border-radius: 10px;
   border: 2px solid #323239;
@@ -859,6 +968,10 @@ body main #contact .container #form_content div a:hover {
   background-color: rgba(63, 61, 86, 0.8);
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
 }
 
 body main #contact .container #form_content #rs {
@@ -880,6 +993,8 @@ body main #contact .container #form_content #rs {
 
 body main #contact .container #form_content #rs a {
   background-color: rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0 0 30px #000000;
+          box-shadow: 0 0 30px #000000;
   padding: 25px 0;
   border-radius: 10px;
   border: 2px solid #323239;

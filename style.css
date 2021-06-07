@@ -38,8 +38,22 @@ body header nav {
   padding: 20px 0;
 }
 
+@media (max-width: 375px) {
+  body header nav {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
 body header nav h1 {
   width: 80%;
+}
+
+@media (max-width: 375px) {
+  body header nav h1 {
+    display: none;
+  }
 }
 
 body header nav h1 a {
@@ -106,6 +120,10 @@ body header nav .burgerbars .bar2 {
   width: 35px;
 }
 
+body header nav .change {
+  z-index: 199;
+}
+
 body header nav .change .bar1 {
   -webkit-transform: rotate(-45deg) translate(-8px, 13px);
   transform: rotate(-45deg) translate(-8px, 13px);
@@ -124,7 +142,7 @@ body header nav .overlay {
   height: 0%;
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   top: 0;
   left: 0;
   background-color: black;
@@ -142,19 +160,18 @@ body header nav .overlay .overlay-content {
   margin-top: 30px;
 }
 
-body header nav .overlay .overlay-content .overlay a {
-  padding: 8px;
+body header nav .overlay .overlay-content a {
+  padding: 40px 0;
   text-decoration: none;
-  font-size: 36px;
-  color: #818181;
+  font-size: 48px;
+  color: #FFFFFF;
   display: block;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  letter-spacing: 10px;
 }
 
-body header nav .overlay .overlay-content .overlay a:hover,
-body header nav .overlay .overlay-content .overlay a:focus {
-  color: #f1f1f1;
+body header nav .overlay .overlay-content a:hover,
+body header nav .overlay .overlay-content a:focus {
+  color: #C63D6B;
 }
 
 @media screen and (max-height: 450px) {
@@ -214,7 +231,7 @@ body main .btn_next_page a {
   padding-top: 60px;
   position: absolute;
   bottom: 20px;
-  z-index: 2;
+  z-index: 1;
   display: inline-block;
   color: #fff;
   font-size: 20px;
@@ -356,8 +373,20 @@ body main #home .container .content #home_me h2 {
   text-shadow: 0 0 30px #000000;
 }
 
+@media (max-width: 375px) {
+  body main #home .container .content #home_me h2 {
+    font-size: 3rem;
+  }
+}
+
 body main #home .container .content #home_me p {
   font-size: 2rem;
+}
+
+@media (max-width: 375px) {
+  body main #home .container .content #home_me p {
+    font-size: 1.25rem;
+  }
 }
 
 body main #skills {
@@ -410,6 +439,114 @@ body main #skills .container .titre_sct .sct_h3 {
   text-shadow: 0 0 20px #000000;
 }
 
+@media (max-width: 375px) {
+  body main #skills .container .titre_sct .sct_h3 {
+    font-size: 3.5rem;
+  }
+}
+
+body main #skills .container #slider_skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 70%;
+  overflow-x: scroll;
+}
+
+@media (max-width: 375px) {
+  body main #skills .container #slider_skills {
+    width: 20%;
+  }
+}
+
+body main #skills .container #slider_skills .frame_skill {
+  width: 33.333333%;
+  margin: 0 6%;
+  padding: 30px 0;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 375px) {
+  body main #skills .container #slider_skills .frame_skill {
+    width: 80%;
+    display: none;
+  }
+}
+
+body main #skills .container #slider_skills .frame_skill span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 250px;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 40px;
+  -webkit-box-shadow: 0 0 15px #000000;
+          box-shadow: 0 0 15px #000000;
+}
+
+body main #skills .container #slider_skills .frame_skill span i {
+  -webkit-transform: rotateY(10deg);
+          transform: rotateY(10deg);
+  font-size: 9.75rem;
+  text-shadow: 0 0 15px #000000;
+  color: #D89561;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+body main #skills .container #slider_skills .frame_skill:hover,
+body main #skills .container #slider_skills .frame_skill:out-of-range {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+  cursor: pointer;
+}
+
+body main #skills .container #slider_skills .frame_skill:hover span,
+body main #skills .container #slider_skills .frame_skill:out-of-range span {
+  background-color: rgba(63, 61, 86, 0.2);
+}
+
+body main #skills .container #slider_skills .frame_skill:hover span i,
+body main #skills .container #slider_skills .frame_skill:out-of-range span i {
+  -webkit-transform: rotateY(360deg) rotateX(20deg);
+          transform: rotateY(360deg) rotateX(20deg);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 15px #000000;
+  -webkit-transition: 0.75s ease-in-out;
+  transition: 0.75s ease-in-out;
+}
+
+body main #skills .container #slider_skills::-webkit-scrollbar {
+  width: 100%;
+  height: 4px;
+}
+
 body main #portfolio {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -460,6 +597,12 @@ body main #portfolio .container .titre_sct .sct_h3 {
   text-shadow: 0 0 20px #000000;
 }
 
+@media (max-width: 375px) {
+  body main #portfolio .container .titre_sct .sct_h3 {
+    font-size: 3.5rem;
+  }
+}
+
 body main #portfolio .container #exemples {
   margin: auto auto;
   display: -webkit-box;
@@ -479,10 +622,17 @@ body main #portfolio .container #exemples {
 
 body main #portfolio .container #exemples .exemple {
   width: 32%;
-  height: 47%;
+  max-height: 47%;
   overflow-y: scroll;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.95);
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.95);
+}
+
+@media (max-width: 768px) {
+  body main #portfolio .container #exemples .exemple {
+    width: 48%;
+    height: 30%;
+  }
 }
 
 body main #portfolio .container #exemples .exemple .myimg {
@@ -504,7 +654,7 @@ body main #portfolio .container #exemples .exemple:hover {
 body main #portfolio .container .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 99;
   left: 0;
   top: 0;
   width: 100%;
@@ -593,6 +743,12 @@ body main #contact {
   margin: 0 auto;
 }
 
+@media (max-width: 375px) {
+  body main #contact {
+    width: 100%;
+  }
+}
+
 body main #contact .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -632,6 +788,12 @@ body main #contact .container .titre_sct .sct_h3 {
   text-shadow: 0 0 20px #000000;
 }
 
+@media (max-width: 375px) {
+  body main #contact .container .titre_sct .sct_h3 {
+    font-size: 3.5rem;
+  }
+}
+
 body main #contact .container #form_content {
   width: 40%;
   display: -webkit-box;
@@ -650,6 +812,12 @@ body main #contact .container #form_content {
   margin: 25vh 0;
 }
 
+@media (max-width: 375px) {
+  body main #contact .container #form_content {
+    width: 95%;
+  }
+}
+
 body main #contact .container #form_content div {
   width: 100%;
   display: -webkit-box;
@@ -665,7 +833,7 @@ body main #contact .container #form_content div {
 }
 
 body main #contact .container #form_content div a {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.4);
   padding: 25px 0;
   border-radius: 10px;
   border: 2px solid #323239;
@@ -677,6 +845,13 @@ body main #contact .container #form_content div a {
   text-align: center;
   text-shadow: 0 0px 6px rgba(0, 0, 0, 0.6);
   word-break: break-all;
+}
+
+@media (max-width: 375px) {
+  body main #contact .container #form_content div a {
+    font-size: 1.25rem;
+    padding: 20px 0;
+  }
 }
 
 body main #contact .container #form_content div a:hover {
@@ -704,7 +879,7 @@ body main #contact .container #form_content #rs {
 }
 
 body main #contact .container #form_content #rs a {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.4);
   padding: 25px 0;
   border-radius: 10px;
   border: 2px solid #323239;
@@ -718,6 +893,13 @@ body main #contact .container #form_content #rs a {
   word-break: break-all;
 }
 
+@media (max-width: 375px) {
+  body main #contact .container #form_content #rs a {
+    font-size: 1.25rem;
+    padding: 20px 0;
+  }
+}
+
 body main #contact .container #form_content #rs a:hover {
   color: #D89561;
   background-color: rgba(63, 61, 86, 0.8);
@@ -728,7 +910,7 @@ body main #contact .container #form_content #rs a:hover {
 body footer {
   position: fixed;
   bottom: 0;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
 }
 

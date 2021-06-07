@@ -33,10 +33,10 @@
             </ul>
 
             <!-- MENU BURGER TO CROSS -->
-            <div class="burgerbars" onclick="BurgerX(this)" onclick="openNav()">
-                <span class="bar1"></span>
-                <span class="bar2"></span>
-                <span class="bar3"></span>
+            <div class="burgerbars" onclick="BurgerX(this)" onclick="closeNav()">
+                <span class="bar1" onclick="openNav()"></span>
+                <span class="bar2" onclick="openNav()"></span>
+                <span class="bar3" onclick="openNav()"></span>
             </div>
 
             <!-- NAVBAR -->
@@ -47,17 +47,17 @@
                   <a href="#">PORTFOLIO</a>
                   <a href="#">CONTACT</a>
                 </div>
-              </div>              
+              </div>     
         </nav>
     </header>
 
     <main>
         <!-- DOTS PAGES SELCETORS -->
         <div class="dot_selector">
-            <a class="dot" href="#home"></a>
-            <a class="dot" href="#skills"></a>
-            <a class="dot" href="#portfolio"></a>
-            <a class="dot" href="#contact"></a>
+            <a class="dot" href="#home" onclick="currentPage(1)"></a>
+            <a class="dot" href="#skills" onclick="currentPage(2)"></a>
+            <a class="dot" href="#portfolio" onclick="currentPage(3)"></a>
+            <a class="dot" href="#contact" onclick="currentPage(4)"></a>
         </div>
 
 <!-- CONTENT -->
@@ -107,6 +107,44 @@
                     </h3>           
                 </div>
 
+                <!-- SLIDER SKILLS -->
+                <div id="slider_skills">
+
+                    <!-- HTML 5 -->
+                    <div class="frame_skill">
+                        <span><i class="fab fa-html5"></i></span>
+                    </div>
+
+                    <!-- CSS 3 -->
+                    <div class="frame_skill">
+                        <span><i class="fab fa-css3-alt"></i></span>
+                    </div>
+
+                    <!-- JAVASCRIPT -->
+                    <div class="frame_skill">
+                        <span><i class="fab fa-node-js"></i></span>
+                    </div>
+
+                    <!-- BOOTSTRAP -->
+                    <div class="frame_skill">
+                        <span><i class="fab fa-bootstrap"></i></span>
+                    </div>
+
+                    <!-- WORDPRESS -->
+                    <div class="frame_skill">
+                        <span><i class="fab fa-wordpress"></i></span>
+                    </div>
+
+                    <!-- SASS -->
+                    <div class="frame_skill">
+                        <span><i class="fab fa-sass"></i></span>
+                    </div>
+
+                    <!-- PHP -->
+                    <div class="frame_skill">
+                        <span><i class="fab fa-php"></i></span>
+                    </div>
+                </div>
 
 
 
@@ -178,7 +216,7 @@
                     <div class="exemple">
                         <div>
                             <img class="myimg" id="myImg2" onclick="onClick(this)" src="./img/ACTIVITÉS BOWLING DU PARC.png"
-                            alt="...">>
+                            alt="...">
                         </div>
                     </div>
 
@@ -243,10 +281,7 @@
             </div>
         </section>
 
-<!-- FIN DU CONTENT -->
-
-        
-
+<!-- FIN DU CONTENT -->  
 
     </main>
 

@@ -51,13 +51,14 @@
         </nav>
     </header>
 
+    <!-- MAIN -->
     <main>
         <!-- DOTS PAGES SELCETORS -->
         <div class="dot_selector">
-            <a class="dot" href="#home" onclick="currentPage(1)"></a>
-            <a class="dot" href="#skills" onclick="currentPage(2)"></a>
-            <a class="dot" href="#portfolio" onclick="currentPage(3)"></a>
-            <a class="dot" href="#contact" onclick="currentPage(4)"></a>
+            <a class="dot_page" id="dot_home" href="#home" onclick="goToDiv(1)"></a>
+            <a class="dot_page" id="dot_skills" href="#skills" onclick="goToDiv(2)"></a>
+            <a class="dot_page" id="dot_portfolio" href="#portfolio" onclick="goToDiv(3)"></a>
+            <a class="dot_page" id="dot_contact" href="#contact" onclick="goToDiv(4)"></a>
         </div>
 
 <!-- CONTENT -->
@@ -74,7 +75,7 @@
                     <!-- MOI -->
                     <div id="home_me">
                         <h2>
-                            germond <br> cyprien
+                            ge<a href="#">r</a>mo<a href="#">n</a>d <br> cyprien
                         </h2>
         
                         <p>
@@ -105,7 +106,7 @@
 
                 <!-- BTN SCROLL NEXT PAGE -->
                 <div class="btn_next_page">
-                    <a href="#skills"><span></span>Scroll</a>
+                    <a href="#skills" onclick="goToDiv(2)"><span></span>Scroll</a>
                 </div>
             </div>
 
@@ -179,16 +180,16 @@
                         <span class="dot" onclick="currentSlide(1)"></span> 
                         <span class="dot" onclick="currentSlide(2)"></span> 
                         <span class="dot" onclick="currentSlide(3)"></span> 
-                        <span class="dot" onclick="currentSlide(4)"></span> 
-                        <span class="dot" onclick="currentSlide(5)"></span> 
-                        <span class="dot" onclick="currentSlide(6)"></span> 
-                        <span class="dot" onclick="currentSlide(7)"></span> 
+                        <span class="dot" onclick="currentSlide(3)"></span> 
+                        <span class="dot" onclick="currentSlide(3)"></span> 
+                        <span class="dot" onclick="currentSlide(3)"></span> 
+                        <span class="dot" onclick="currentSlide(3)"></span> 
                       </div>
                 </div>
 
                 <!-- BTN SCROLL NEXT PAGE -->
                 <div class="btn_next_page">
-                    <a href="#portfolio"><span></span>Scroll</a>
+                    <a href="#portfolio" onclick="goToDiv(3)"><span></span>Scroll</a>
                 </div>
             </div>
             
@@ -214,7 +215,15 @@
                     <div class="exemple">
                         <div>
                             <img class="myimg" id="myImg" onclick="onClick(this)" src="./img/SIMPLE TEMPLATE.jpg"
-                                alt="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, placeat!">
+                                alt="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, placeat!" >
+                            <div class="modal_text">                                
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem recusandae corporis pariatur exercitationem accusamus fugiat dolor tempora nostrum dolorum velit.
+                                </p>
+                                <a href="">
+                                    GITHUB
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -273,7 +282,7 @@
 
                 <!-- BTN SCROLL NEXT PAGE -->
                 <div class="btn_next_page">
-                    <a href="#contact"><span></span>Scroll</a>
+                    <a href="#contact" onclick="goToDiv(4)"><span></span>Scroll</a>
                 </div>
             </div>
 
@@ -335,9 +344,6 @@
     <script src="./js/script.js"></script>
     <script src="./js/burgertocross.js"></script>
     <script src="./js/navbar.js"></script>
-    <script src="./js/scroll.js"></script>
-    <script src="./js/modal.js"></script>
-    <script src="./js/slider.js"></script>
 </body>
 
 </html>

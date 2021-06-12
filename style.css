@@ -145,19 +145,39 @@ body header nav .overlay {
   z-index: 100;
   top: 0;
   left: 0;
-  background-color: black;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: #000000;
   overflow: hidden;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body header nav .overlay .overlay-content {
   position: relative;
-  top: 25%;
   width: 100%;
   text-align: center;
   margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body header nav .overlay .overlay-content a {
@@ -169,25 +189,15 @@ body header nav .overlay .overlay-content a {
   letter-spacing: 10px;
 }
 
+@media (max-width: 375px) {
+  body header nav .overlay .overlay-content a {
+    font-size: 36px;
+  }
+}
+
 body header nav .overlay .overlay-content a:hover,
 body header nav .overlay .overlay-content a:focus {
   color: #C63D6B;
-}
-
-@media screen and (max-height: 450px) {
-  body header nav .overlay .overlay a {
-    font-size: 20px;
-  }
-  body header nav .overlay .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-}
-
-body main {
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
 }
 
 body main .dot_selector {
@@ -210,7 +220,7 @@ body main .dot_selector {
   top: 45%;
 }
 
-body main .dot_selector .dot {
+body main .dot_selector .dot_page {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -218,7 +228,8 @@ body main .dot_selector .dot {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-body main .dot_selector .dot:hover {
+body main .dot_selector .dot_page_active,
+body main .dot_selector .dot_page:hover {
   background-color: #FFFFFF;
 }
 
@@ -317,7 +328,6 @@ body main .btn_next_page a:hover {
 }
 
 body main #home {
-  scroll-snap-align: start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -331,6 +341,12 @@ body main #home {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+@media (max-width: 768px) {
+  body main #home {
+    width: 95%;
+  }
 }
 
 body main #home .container {
@@ -367,6 +383,15 @@ body main #home .container .content {
           align-items: center;
 }
 
+@media (max-width: 768px) {
+  body main #home .container .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 body main #home .container .content #home_me {
   color: #FFFFFF;
   text-transform: uppercase;
@@ -377,6 +402,16 @@ body main #home .container .content #home_me h2 {
   color: #D89561;
   font-weight: 600;
   text-shadow: 0 0 30px #000000;
+  position: relative;
+}
+
+body main #home .container .content #home_me h2 a {
+  color: #D89561;
+}
+
+body main #home .container .content #home_me h2 a:hover {
+  color: #C63D6B;
+  cursor: pointer;
 }
 
 @media (max-width: 375px) {
@@ -403,19 +438,51 @@ body main #home .container .content #home_visual {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 40%;
+}
+
+@media (max-width: 768px) {
+  body main #home .container .content #home_visual {
+    width: 90%;
+  }
 }
 
 body main #home .container .content #home_visual .illu {
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 768px) {
+  body main #home .container .content #home_visual .illu {
+    width: 45%;
+  }
 }
 
 body main #home .container .content #home_visual .illu img {
   width: 90%;
 }
 
+@media (max-width: 768px) {
+  body main #home .container .content #home_visual .illu img {
+    width: 80%;
+  }
+}
+
 body main #skills {
-  scroll-snap-align: start;
   height: 100vh;
   width: 80%;
   margin: 0 auto;
@@ -425,6 +492,12 @@ body main #skills {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 768px) {
+  body main #skills {
+    width: 95%;
+  }
 }
 
 body main #skills .container {
@@ -649,7 +722,6 @@ body main #skills .container .dot:hover {
 }
 
 body main #portfolio {
-  scroll-snap-align: start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -659,6 +731,12 @@ body main #portfolio {
   height: 100vh;
   width: 80%;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  body main #portfolio {
+    width: 95%;
+  }
 }
 
 body main #portfolio .container {
@@ -732,6 +810,7 @@ body main #portfolio .container #exemples .exemple {
   overflow-y: scroll;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.95);
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.95);
+  background-color: rgba(35, 35, 35, 0.6);
 }
 
 @media (max-width: 768px) {
@@ -744,17 +823,61 @@ body main #portfolio .container #exemples .exemple {
 body main #portfolio .container #exemples .exemple .myimg {
   cursor: pointer;
   width: 100%;
+  opacity: 0.6;
 }
 
 body main #portfolio .container #exemples .exemple .myimg:hover {
-  opacity: 0.75;
+  opacity: 1;
+}
+
+body main #portfolio .container #exemples .exemple .modal_text {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0;
+}
+
+body main #portfolio .container #exemples .exemple .modal_text p {
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
+  font-weight: 500;
+}
+
+body main #portfolio .container #exemples .exemple .modal_text a {
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #D89561;
+  color: #FFFFFF;
+  -webkit-box-shadow: 0 0 10px #000000;
+          box-shadow: 0 0 10px #000000;
+  font-weight: 600;
 }
 
 body main #portfolio .container #exemples .exemple:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
   -webkit-transition: .3s;
   transition: .3s;
+}
+
+body main #portfolio .container #exemples .exemple:hover a:hover {
+  background-color: #C63D6B;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-transition: .1s;
+  transition: .1s;
 }
 
 body main #portfolio .container .modal {
@@ -838,7 +961,6 @@ body main #portfolio .container .modal .close:focus {
 }
 
 body main #contact {
-  scroll-snap-align: start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -848,6 +970,12 @@ body main #contact {
   height: 100vh;
   width: 80%;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  body main #contact {
+    width: 95%;
+  }
 }
 
 @media (max-width: 375px) {
@@ -919,9 +1047,15 @@ body main #contact .container #form_content {
   margin: 25vh 0;
 }
 
+@media (max-width: 768px) {
+  body main #contact .container #form_content {
+    width: 80%;
+  }
+}
+
 @media (max-width: 375px) {
   body main #contact .container #form_content {
-    width: 95%;
+    width: 80%;
   }
 }
 
@@ -991,6 +1125,15 @@ body main #contact .container #form_content #rs {
   width: 100%;
 }
 
+@media (max-width: 375px) {
+  body main #contact .container #form_content #rs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 body main #contact .container #form_content #rs a {
   background-color: rgba(255, 255, 255, 0.4);
   -webkit-box-shadow: 0 0 30px #000000;
@@ -1010,6 +1153,7 @@ body main #contact .container #form_content #rs a {
 
 @media (max-width: 375px) {
   body main #contact .container #form_content #rs a {
+    width: 100%;
     font-size: 1.25rem;
     padding: 20px 0;
   }
